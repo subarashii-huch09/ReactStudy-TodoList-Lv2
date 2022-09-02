@@ -1,0 +1,57 @@
+.container{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  justify-content: space-center;
+  align-items: center;
+  gap: 4.25rem;
+  font-weight: 800;
+  max-width: 50rem;
+  margin: 0 auto;
+  /* border: 1px solid red; */
+}
+
+.loginTitle{
+  margin-bottom: 2rem;
+}
+
+.formControlLabel {
+  display: block;
+  padding-bottom: 0.5rem;
+}
+
+.formControl {
+  padding-bottom: 1.5rem;;
+}
+
+
+.formControlInput {
+  border-radius: 10px;
+  padding: 0.8rem 1rem;
+  width: 19rem;
+}
+
+.formControlSubmit {
+  display: block;
+  background-color: #333333;
+  border-radius: 10px;
+  color: #FFFFFF;
+  padding: 0.8rem 2.85rem;
+  width: 8rem;
+  margin: 0.25rem auto;
+}
+
+.formControlSubmit:hover {
+  color:black;
+  background-color: #eee4a3;
+}
+
+.formControl_btnLink{
+  display: block;
+  color:#333333;
+  text-align: center;
+  padding-top: 0.75rem;
+}
+
+.formControl_btnLink:hover {
+  color:#FFFFFF;
+}
