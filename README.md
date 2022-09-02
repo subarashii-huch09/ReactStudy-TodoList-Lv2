@@ -1,5 +1,35 @@
-# Getting Started with Create React App
 
+# React Study Group - TodoList Lv2 
+  ### React & API 整合證書任務
+設計稿：[Figma 設計稿](https://www.figma.com/file/pFivfS3rDX3N3u3dN9aIlx/TodoList?node-id=0%3A1)、 [Codepen CSS 排版](https://codepen.io/liao/pen/mdpmXKg?editors=1010) (可 fork 版型來挑戰此任務) 
+
+  
+1. - [ ] 必做：需使用 React 框架來挑戰，並整合此任務提供的 API
+2. - [ ] 需使用 React Router，並統一部署到 GitHub Pages
+3. - [ ] 代辦為零筆資料時，需顯示文字「目前尚無代辦事項」
+4. - [ ] 新增代辦功能
+5. - [ ] 移除代辦功能
+6. - [ ] 切換代辦狀態(打勾表示已完成、未勾表示待完成)
+7. - [ ] 狀態頁籤切換功能(全部、待完成、已完成)
+8. - [ ] 確認待完成項目總數 (5 個待完成項目)
+9. - [ ] 清除已完成項目
+10.  - [ ] 登入、註冊 API 功能
+11.  - [ ] 表單欄位為空值或非 Email 格式時，需提醒用戶。(例：alert 彈跳、紅色文字顯示、SweetAlert2)
+12.  - [ ] 需處理重複帳號註冊時， API 回傳錯誤時，需提醒用戶。(例：alert 彈跳、紅色文字顯示、SweetAlert2)
+
+
+Features for better User Experience:
+- [ ] Display alert when invalid input is entered
+- [ ] Clear input after add button is clicked
+- [ ] Keydown feature
+
+
+<br>
+<hr>
+<br>
+
+<details>
+<summary>Getting Started with Create React App</summary>
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -68,3 +98,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+</details>
