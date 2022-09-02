@@ -22,6 +22,7 @@
 - [ ] Display alert when invalid input is entered
 - [ ] Clear input after add button is clicked
 - [ ] Keydown feature
+- [ ] RWD
 
 
 <br>
