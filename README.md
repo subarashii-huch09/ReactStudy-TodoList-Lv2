@@ -18,7 +18,7 @@
 12.  - [ ] 需處理重複帳號註冊時， API 回傳錯誤時，需提醒用戶。(例：alert 彈跳、紅色文字顯示、SweetAlert2)
 
 
-Features for better User Experience:
+#### Features for better User Experience:
 - [ ] Display alert when invalid input is entered
 - [ ] Clear input after add button is clicked
 - [ ] Keydown feature
