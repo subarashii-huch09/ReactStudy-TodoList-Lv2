@@ -1,0 +1,15 @@
+.side{
+  display: grid;
+  grid-template-columns: 1fr;
+  
+}
+
+.logo{
+  padding-left: 2.25rem;
+  padding-bottom: 1.25rem;
+}
+
+.display{
+  max-width: 24rem;
+  height: 24rem;
+}
