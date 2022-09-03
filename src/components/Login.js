@@ -16,7 +16,7 @@ const Login = () => {
     <div className={styles.container}>
       <Side />
       <div>
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
           <h2 className={styles.loginTitle}>最實用的線上代辦事項服務</h2>
           <div className={styles.formControl}>
             <label className={styles.formControlLabel} for="email">
@@ -27,7 +27,7 @@ const Login = () => {
               id="email"
               name="email"
               type="text"
-              placeholder="Email"
+              placeholder="請輸入Email"
               {...register("Email", {
                 required: true,
                 pattern: /^\S+@\S+$/i,
@@ -45,7 +45,7 @@ const Login = () => {
               name="password"
               id="password"
               type="password"
-              placeholder="密碼"
+              placeholder="請輸入密碼"
               {...register("密碼", {
                 required: true,
                 maxLength: 80,
@@ -54,14 +54,14 @@ const Login = () => {
             />
             <span>{errors.password?.message}</span>
           </div>
-            <input
-              className={styles.formControlSubmit}
-              type="submit"
-              value="Log in"
-            />
-            <Link className={styles.formControl_btnLink} to="/signUp">
-              註冊帳號
-            </Link>
+          <input
+            className={styles.formControlSubmit}
+            type="submit"
+            value="Log in"
+          />
+          <Link className={styles.formControl_btnLink} to="/signUp">
+            註冊帳號
+          </Link>
         </form>
       </div>
     </div>
