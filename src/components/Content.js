@@ -40,7 +40,7 @@ function Content({ todoData, setTodoData }) {
   const EmptyItem = () => {
     return (
       <div className={styles.empty}>
-        <p className={styles.emptyMessage}>目前尚無代辦事項</p>;
+        <p className={styles.emptyMessage}>目前尚無代辦事項</p>
         <img src={emptyImage} alt="emptyImage"/>
       </div>
     );
@@ -48,48 +48,49 @@ function Content({ todoData, setTodoData }) {
 
   return (
     <>
+    { todoData.length> 0 ? (
+      <>
       <TodoListTab currentTab={currentTab} setCurrentTab={setCurrentTab} />
       <div className={styles.todoListItems}>
-        <ul className={styles.todoListItem}>
-          {todoData.length > 0 ? (
-            todoData
-              .filter((item) => {
-                if (currentTab === "To Be Done") {
-                  return item.done === false;
-                } else if (currentTab === "Done") {
-                  return item.done === true;
-                } else {
-                  return true;
-                }
-              })
-              .map((item) => {
-                return (
-                  <li key={item.id}>
-                    <label className={styles.todoListLabel}>
-                      <input
-                        className={styles.todoListInput}
-                        type="checkbox"
-                        checked={item.done ? "checked" : ""}
-                        onChange={() => toggleDone(item)}
-                      />
-                      <span>{item.description}</span>
-                    </label>
-                    <button onClick={() => removeItem(item)}>X</button>
-                  </li>
-                );
-              })
-          ) : (
-            <EmptyItem />
-          )}
-        </ul>
-        <div className={styles.todoListStatistics}>
-          <p>
-            {todoData.filter((item) => item.done === false).length}
-            個待完成項目
-          </p>
-          <button onClick={removeDone}>清除已完成項目</button>
-        </div>
+            <ul className={styles.todoListItem}>
+              {todoData
+                .filter((item) => {
+                  if (currentTab === "To Be Done") {
+                    return item.done === false;
+                  } else if (currentTab === "Done") {
+                    return item.done === true;
+                  } else {
+                    return true;
+                  }
+                })
+                .map((item) => {
+                  return (
+                    <li key={item.id}>
+                      <label className={styles.todoListLabel}>
+                        <input
+                          className={styles.todoListInput}
+                          type="checkbox"
+                          checked={item.done ? "checked" : ""}
+                          onChange={() => toggleDone(item)}
+                        />
+                        <span>{item.description}</span>
+                      </label>
+                      <button onClick={() => removeItem(item)}>X</button>
+                    </li>
+                  )
+                })}
+            </ul>
+            <div className={styles.todoListStatistics}>
+              <p>
+                {todoData.filter((item) => item.done === false).length}
+                個待完成項目
+              </p>
+              <button onClick={removeDone}>清除已完成項目</button>
+            </div>
       </div>
+      </>): (
+          <EmptyItem />
+        )}
     </>
   );
 }
