@@ -1,0 +1,91 @@
+.container{
+  padding: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  font-weight: 700;
+  max-width: 50rem;
+}
+
+.formTitle{
+  margin: 1.125rem 0 2rem;
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+
+.formControl {
+  padding-bottom: 1.25rem;
+  margin: 0 auto 0.75rem;
+  width: 100%;
+}
+
+.formControl:nth-child(5) {
+  padding: 0;
+}
+
+.formControlLabel {
+  display: block;
+  padding-bottom: 0.25rem;
+}
+
+.formControlInput {
+  border: none;
+  border-radius: 10px;
+  padding: 0.95rem 0.85rem;
+  width: 100%;
+}
+
+.formControlSubmitBtn, .formControlRegisterBtn {
+  display: block;
+  background-color: #333333;
+  border-radius: 10px;
+  color: #FFFFFF;
+  padding: 0.75rem 2.85rem;
+  width: 8rem;
+  margin: 0.125rem auto;
+  font-weight: 900;
+  font-size: 1.125rem;
+}
+
+.formControlSubmitBtn:hover {
+  color:black;
+  background-color: #eee4a3;
+}
+
+.formControlBtnLink{
+  display: block;
+  color:#333333;
+  text-align: center;
+  padding-top: 1.25rem;
+  font-weight: 800;
+}
+
+.formControl_btnLink:hover {
+  color:#FFFFFF;
+}
+
+.formControlRegisterBtn{
+  padding: 0.85rem 2.25rem;
+  font-size: 0.95rem;
+}
+
+
+.loginForm{
+  padding-top: 3rem;
+}
+
+@media only screen and (min-width: 38rem){
+  .container{
+    grid-template-columns: repeat(2,1fr);
+    padding: 7.5rem 2.5rem;
+    gap: 3.75rem;
+  }
+}
+
+@media only screen and (min-width: 60rem){
+  .container{
+    width: 90%;
+    margin: 0 auto;
+  }
+}
