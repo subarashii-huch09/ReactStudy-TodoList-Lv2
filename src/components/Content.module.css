@@ -1,0 +1,108 @@
+.todoListItems {
+  padding: 0.75rem 0.125rem 0.5rem 0.5rem;
+  width: 100%;
+}
+
+.todoListItems .todoListItem {
+  margin-bottom: 8px;
+}
+
+.todoListItems .todoListLabel {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1px solid #e5e5e5;
+  padding-bottom: 15px;
+  color: #333333;
+  line-height: 20.27px;
+}
+
+.todoListItems .todoListInput {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #9F9A91;
+  border-radius: 5px;
+  margin-right: 16px;
+}
+
+.todoListItems .todoListInput:checked ~ span {
+  color: #9F9A91;
+  text-decoration: line-through;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.todoListItems li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 17px;
+  font-size: 0.95rem;
+}
+
+.todoListItems li button {
+  margin-bottom: 1.2rem;
+  margin-left: 1.1rem;
+  display: block;
+  font-size: 1.75rem;
+  color: #d3270d;
+  opacity: 0;
+  font-weight: 800;
+  background-color: rgba(32, 177, 41, 0.133);
+  border-radius: 20%;
+  border: none;
+}
+
+.todoListItems li:hover button {
+  opacity: 1;
+  background: none;
+}
+ .todoListStatistics {
+  padding-top: 1.25rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+          align-items: center;
+}
+
+ .todoListStatistics p {
+  color: #333333;
+  font-size: 0.95rem;
+  font-weight: 900;
+}
+
+ .todoListStatistics button {
+  color: #abaaa7;
+  font-size: 0.85rem;
+  padding: 0.55rem;
+  border-radius: 10%;
+  border: none;
+  background-color: #fff;
+  font-weight: 800;
+}
+
+.todoListStatistics button:hover {
+  color:#e5e5e5;
+  background-color: red;
+}
+
+.empty {
+  text-align: center;
+  padding: 1.2rem;
+}
+
+.emptyMessage {
+  font-weight: 800;
+  font-size: 1.5rem;
+  padding: 1rem;
+}

@@ -16,7 +16,10 @@ const Login = () => {
     <div className={styles.container}>
       <Side />
       <div>
-        <form className={`${styles.form} ${styles.loginForm}`} onSubmit={handleSubmit(onSubmit)}>
+        <form
+          className={`${styles.form} ${styles.loginForm}`}
+          onSubmit={handleSubmit(onSubmit)}
+        >
           <h2 className={styles.formTitle}>最實用的線上代辦事項服務</h2>
           <div className={styles.formControl}>
             <label className={styles.formControlLabel} htmlFor="email">
@@ -32,7 +35,7 @@ const Login = () => {
                 pattern: { value: /^\S+@\S+$/i, message: "不符合 Email 規則" },
               })}
             />
-            <span>{errors.email?.message}</span>
+            <span className={styles.formErrorMsg}>{errors.Email?.message}</span>
           </div>
           <div className={styles.formControl}>
             <label className={styles.formControlLabel} htmlFor="password">
@@ -49,7 +52,9 @@ const Login = () => {
                 minLength: { value: 8, message: "密碼至少為 8 碼" },
               })}
             />
-            <span>{errors.password?.message}</span>
+            <span className={styles.formErrorMsg}>
+              {errors.password?.message}
+            </span>
           </div>
           <input
             className={styles.formControlSubmitBtn}

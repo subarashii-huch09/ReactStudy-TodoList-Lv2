@@ -1,0 +1,33 @@
+.tabList{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+}
+
+.tabList li {
+  width: 100%;
+}
+
+.tabList button {
+  display: block;
+  color: #765d30;
+  font-weight: bold;
+  text-align: center;
+  padding: 11px;
+  border-top:none;
+  border-left:none;
+  border-right:none;
+  background-color: #fff;
+  border-bottom: 2px solid #efefef;
+  width: 100%;
+  font-size: 0.85rem;
+}
+
+.tabList .active {
+  color: #333333;
+  border-bottom: 3px solid #9b860d;
+}
+

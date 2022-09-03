@@ -1,0 +1,57 @@
+.todoListLabel {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1px solid #e5e5e5;
+  padding-bottom: 15px;
+  color: #333333;
+  line-height: 20.27px;
+}
+
+.todoListInput {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #9F9A91;
+  border-radius: 5px;
+  margin-right: 16px;
+}
+
+ .todoListInput:checked ~ span {
+  color: #9F9A91;
+  text-decoration: line-through;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 17px;
+  font-size: 0.95rem;
+}
+
+li button {
+  margin-bottom: 1.2rem;
+  margin-left: 1.1rem;
+  display: block;
+  font-size: 1.75rem;
+  color: #d3270d;
+  opacity: 0;
+  font-weight: 800;
+  background-color: rgba(32, 177, 41, 0.133);
+  border-radius: 20%;
+  border: none;
+}
+
+ li:hover button {
+  opacity: 1;
+  background: none;
+}

@@ -17,9 +17,7 @@ const SignUp = () => {
       <Side />
       <div>
         <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
-          <h2 className={styles.formTitle}>
-            註冊帳號
-          </h2>
+          <h2 className={styles.formTitle}>註冊帳號</h2>
           <div className={styles.formControl}>
             <label className={styles.formControlLabel} htmlFor="email">
               Email
@@ -34,7 +32,7 @@ const SignUp = () => {
                 pattern: { value: /^\S+@\S+$/i, message: "不符合 Email 規則" },
               })}
             />
-            <span>{errors.email?.message}</span>
+            <span className={styles.formErrorMsg}>{errors.Email?.message}</span>
           </div>
           <div className={styles.formControl}>
             <label className={styles.formControlLabel} htmlFor="userName">
@@ -51,7 +49,7 @@ const SignUp = () => {
                 maxLength: { value: 12, message: "至多為 12 字元" },
               })}
             />
-            <span>{errors.email?.message}</span>
+            <span className={styles.formErrorMsg}>{errors.email?.message}</span>
           </div>
           <div className={styles.formControl}>
             <label className={styles.formControlLabel} htmlFor="password">
@@ -68,7 +66,9 @@ const SignUp = () => {
                 minLength: { value: 8, message: "密碼至少為 8 碼" },
               })}
             />
-            <span>{errors.password?.message}</span>
+            <span className={styles.formErrorMsg}>
+              {errors.password?.message}
+            </span>
           </div>
           <div className={styles.formControl}>
             <label className={styles.formControlLabel} htmlFor="password2">
@@ -80,12 +80,14 @@ const SignUp = () => {
               id="password2"
               type="password"
               placeholder="請再次輸入密碼"
-              {...register("password", {
+              {...register("password2", {
                 required: { value: true, message: "此欄位必填寫" },
                 minLength: { value: 8, message: "密碼至少為 8 碼" },
               })}
             />
-            <span>{errors.password?.message}</span>
+            <span className={styles.formErrorMsg}>
+              {errors.password2?.message}
+            </span>
           </div>
           <input
             className={styles.formControlRegisterBtn}
