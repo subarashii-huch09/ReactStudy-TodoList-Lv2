@@ -20,7 +20,7 @@ const SignUp = () => {
     
     try {
       const res = await api.userSignUp(user);
-      // console.log(res);
+      console.log(res);
       const response = await res.json()
       console.log(res.status)
       if(res.status === 201){
@@ -29,7 +29,8 @@ const SignUp = () => {
         title: response.message,
       });
       navigate("/", { replace: true });
-    } else {
+    } 
+      if(!res.ok){
       Swal.fire({
         icon: "error",
         title: response.message,
