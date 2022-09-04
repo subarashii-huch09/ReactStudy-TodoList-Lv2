@@ -4,9 +4,10 @@ import { useForm } from "react-hook-form";
 import {Link, useNavigate} from "react-router-dom"
 import Side from "./Side";
 import styles from "./LoginSignUp.module.css";
-import authUser from "../authUser";
+import {authUser} from "../authUser";
 import api from "../api"
 import Swal from "sweetalert2";
+
 
 const Login = () => {
   let navigate = useNavigate();

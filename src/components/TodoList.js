@@ -4,7 +4,7 @@ import { useState } from "react";
 import { NavLink} from "react-router-dom";
 import styles from "./TodoList.module.css"
 import logo from "../img/logo_lg.png";
-import authUser from "../authUser";
+import {authUser} from "../authUser"
 
 let data = [
   {
@@ -39,17 +39,16 @@ let data = [
   },
 ];
 
-const Logout = () => {
-  authUser.clearUserData();
-};
+ const Logout = async () => {
+   authUser.clearUserData();
+ };
 
-
+ 
 const TodoList = () =>{
   const [input, setInput] = useState("");
   const [todoData, setTodoData] = useState(data);
 
-  const { nickname } = authUser.getUserData();
-  console.log(nickname)
+
   return (
     <div className={styles.container}>
       <div className={styles.headerContainer}>
@@ -59,11 +58,11 @@ const TodoList = () =>{
         <ul className={styles.navList}>
           <li className={styles.listItem}>
             <button className={styles.user}>
-              {/* {name ? <span>{name} 的代辦</span> : ""} */}
+              王小明的代辦
             </button>
           </li>
           <li className={styles.listItem}>
-            <NavLink to="/" onClick={Logout} className={styles.logOutButton}>
+            <NavLink to='/' onClick={Logout} className={styles.logOutButton}>
               登出
             </NavLink>
           </li>
