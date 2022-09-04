@@ -1,8 +1,11 @@
 import TodoInput from "./TodoInput";
 import Content from "./Content";
 import { useState } from "react";
+import { NavLink} from "react-router-dom";
 import styles from "./TodoList.module.css"
 import logo from "../img/logo_lg.png";
+import authUser from "../authUser";
+
 let data = [
   {
     id: Date.now() + Math.floor(Math.random() * 1000),
@@ -36,10 +39,17 @@ let data = [
   },
 ];
 
+const Logout = () => {
+  authUser.clearUserData();
+};
+
+
 const TodoList = () =>{
   const [input, setInput] = useState("");
   const [todoData, setTodoData] = useState(data);
 
+  const { nickname } = authUser.getUserData();
+  console.log(nickname)
   return (
     <div className={styles.container}>
       <div className={styles.headerContainer}>
@@ -48,13 +58,18 @@ const TodoList = () =>{
         </h1>
         <ul className={styles.navList}>
           <li className={styles.listItem}>
-            <button className={styles.user}>王小明的代辦</button>
+            <button className={styles.user}>
+              {/* {name ? <span>{name} 的代辦</span> : ""} */}
+            </button>
           </li>
           <li className={styles.listItem}>
-            <button className={styles.logOutButton}>登出</button>
+            <NavLink to="/" onClick={Logout} className={styles.logOutButton}>
+              登出
+            </NavLink>
           </li>
         </ul>
       </div>
+      <div className={styles.spacer}></div>
       <TodoInput
         input={input}
         setInput={setInput}

@@ -1,6 +1,8 @@
 .todoListItems {
   padding: 0.75rem 0.125rem 0.5rem 0.5rem;
-  width: 100%;
+  max-width: 36rem;
+  background-color: #fff;
+  padding: 1.25rem;
 }
 
 .todoListItems .todoListItem {
@@ -105,4 +107,13 @@
   font-weight: 800;
   font-size: 1.5rem;
   padding: 1rem;
+}
+
+
+
+@media only screen and (min-width: 38rem){
+  .todoListItems{
+    width: 90%;
+    margin: 0 auto;
+  }
 }

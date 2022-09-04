@@ -20,8 +20,9 @@ const SignUp = () => {
     
     try {
       const res = await api.userSignUp(user);
+      console.log(res)
       const response = await res.json()
-
+      console.log(response)
       if(res.status === 201){
         Swal.fire({
         icon: "success",
@@ -61,24 +62,24 @@ const SignUp = () => {
                 pattern: { value: /^\S+@\S+$/i, message: "不符合 Email 規則" },
               })}
             />
-            <span className={styles.formErrorMsg}>{errors.Email?.message}</span>
+            <span className={styles.formErrorMsg}>{errors.email?.message}</span>
           </div>
           <div className={styles.formControl}>
-            <label className={styles.formControlLabel} htmlFor="nickName">
+            <label className={styles.formControlLabel} htmlFor="nickname">
               您的暱稱
             </label>
             <input
               className={styles.formControlInput}
-              id="nickName"
-              name="nickName"
+              id="nickname"
+              name="nickname"
               type="text"
               placeholder="請輸入您的暱稱"
-              {...register("nickName", {
+              {...register("nickname", {
                 required: { value: true, message: "此欄位必填寫" },
                 maxLength: { value: 12, message: "至多為 12 字元" },
               })}
             />
-            <span className={styles.formErrorMsg}>{errors.email?.message}</span>
+            <span className={styles.formErrorMsg}>{errors.nickname?.message}</span>
           </div>
           <div className={styles.formControl}>
             <label className={styles.formControlLabel} htmlFor="password">

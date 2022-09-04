@@ -3,7 +3,8 @@
   display: -ms-flexbox;
   display: flex;
   justify-content: center;
-  width: 100%;
+  max-width: 36rem;
+  margin-top: 1.25rem;
 
 }
 
@@ -31,3 +32,10 @@
   border-bottom: 3px solid #9b860d;
 }
 
+@media only screen and (min-width: 38rem){
+  .tabList{
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 2.25rem;
+  }
+}

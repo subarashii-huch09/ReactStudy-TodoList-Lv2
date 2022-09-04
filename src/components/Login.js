@@ -72,12 +72,12 @@ const Login = () => {
               id="email"
               name="email"
               placeholder="請輸入Email"
-              {...register("Email", {
+              {...register("email", {
                 required: { value: true, message: "此欄位必填寫" },
                 pattern: { value: /^\S+@\S+$/i, message: "不符合 Email 規則" },
               })}
             />
-            <span className={styles.formErrorMsg}>{errors.Email?.message}</span>
+            <span className={styles.formErrorMsg}>{errors.email?.message}</span>
           </div>
           <div className={styles.formControl}>
             <label className={styles.formControlLabel} htmlFor="password">
