@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/ReactStudy-TodoList-Lv2/static/css/main.d27622bd.css",
+    "main.js": "/ReactStudy-TodoList-Lv2/static/js/main.4f721913.js",
+    "static/js/787.b5c962fd.chunk.js": "/ReactStudy-TodoList-Lv2/static/js/787.b5c962fd.chunk.js",
+    "static/media/DisplayImg.png": "/ReactStudy-TodoList-Lv2/static/media/DisplayImg.2e9e05b183019b61b025.png",
+    "static/media/empty-bg.png": "/ReactStudy-TodoList-Lv2/static/media/empty-bg.3d9709e802a2248ad2b7.png",
+    "index.html": "/ReactStudy-TodoList-Lv2/index.html",
+    "main.d27622bd.css.map": "/ReactStudy-TodoList-Lv2/static/css/main.d27622bd.css.map",
+    "main.4f721913.js.map": "/ReactStudy-TodoList-Lv2/static/js/main.4f721913.js.map",
+    "787.b5c962fd.chunk.js.map": "/ReactStudy-TodoList-Lv2/static/js/787.b5c962fd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d27622bd.css",
+    "static/js/main.4f721913.js"
+  ]
+}
