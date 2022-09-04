@@ -10,40 +10,20 @@ let data = [
   {
     id: Date.now() + Math.floor(Math.random() * 1000),
     description: "把冰箱發霉的檸檬拿去丟",
-    done: true,
-  },
-  {
-    id: Date.now() + Math.floor(Math.random() * 1000),
-    description: "打電話叫媽媽匯款給我",
     done: false,
   },
-  {
-    id: Date.now() + Math.floor(Math.random() * 1000),
-    description: "整理電腦資料夾",
-    done: false,
-  },
-  {
-    id: Date.now() + Math.floor(Math.random() * 1000),
-    description: "繳電費水費瓦斯費",
-    done: false,
-  },
-  {
-    id: Date.now() + Math.floor(Math.random() * 1000),
-    description: "約vicky禮拜三泡溫泉",
-    done: false,
-  },
-  {
-    id: Date.now() + Math.floor(Math.random() * 1000),
-    description: "約ada禮拜四吃晚餐",
-    done: false,
-  },
+  // {
+  //   id: Date.now() + Math.floor(Math.random() * 1000),
+  //   description: "約ada禮拜四吃晚餐",
+  //   done: false,
+  // },
 ];
 
  const Logout = async () => {
    authUser.clearUserData();
  };
 
- 
+
 const TodoList = () =>{
   const [input, setInput] = useState("");
   const [todoData, setTodoData] = useState(data);
