@@ -1,69 +1,73 @@
 const api_url = "https://todoo.5xcamp.us";
 
 const api = {
-  getAllTodos: async () =>{
-    await fetch(api_url + `/todos`, {
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: localStorage.getItem("token"),
-      },
-      method: "GET"
-    });
-  },
+  // getAllTodos: async () =>{
+  //   await fetch(api_url + `/todos`, {
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //       Authorization: localStorage.getItem("token"),
+  //     },
+  //     method: "GET"
+  //   });
+  // },
 
-  addTodos: async(data) =>{
-    await fetch(api_url + `/todos`, {
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: localStorage.getItem("token"),
-      },
+  // addTodos: async(data) =>{
+  //   await fetch(api_url + `/todos`, {
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //       Authorization: localStorage.getItem("token"),
+  //     },
+  //     method: "POST",
+  //     data: data
+  //   });
+  // },
+
+  // toggleTodos: async (id) => {
+  //   await fetch(api_url + `/todos/${id}/toggle`, {
+  //     headers:{
+  //       "Content-Type": "application/json",
+  //       Authorization: localStorage.getItem("token"),
+  //     },
+  //     method: "PATCH",
+  //   });
+  // },
+
+  // deleteTodos: async (id) => {
+  //   await fetch(api_url + `/todos/${id}`, {
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //       Authorization: localStorage.getItem("token"),
+  //     },
+  //     method: "DELETE",
+  //   }); 
+  // },
+
+  userSignIn: (user) =>{
+    return fetch(`${api_url}/users/sign_in`, {
       method: "POST",
-      data: data
-    });
-  },
-
-  toggleTodos: async (id) => {
-    await fetch(api_url + `/todos/${id}/toggle`, {
-      headers:{
-        "Content-Type": "application/json",
-        Authorization: localStorage.getItem("token"),
-      },
-      method: "PATCH",
-    });
-  },
-
-  deleteTodos: async (id) => {
-    await fetch(api_url + `/todos/${id}`, {
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: localStorage.getItem("token"),
-      },
-      method: "DELETE",
-    }); 
-  },
-
-  user_signIn: async (data) =>{
-    await fetch(api_url + `/users/sign_in`, {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
-      method: "POST",
-      data:data
+      body: JSON.stringify({ user }),
     });
   },
-  user_signOut: async () =>{
-    await fetch(api_url + `/users/sign_out`, {
-      headers: { Authorization: localStorage.getItem("token") },
-      method: "delete",
-    });
-  },
+  // user_signOut: async () =>{
+  //   await fetch(api_url + `/users/sign_out`, {
+  //     headers: { Authorization: localStorage.getItem("token") },
+  //     method: "delete",
+  //   });
+  // },
 
-  user_signUp: async(data) =>{
-    await fetch(api_url+`/users`,{
-      method:"POST",
-      data:data
-    })
+  userSignUp: (user) =>{
+    return fetch(`${api_url}/users`, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ user }),
+    });
   }
 }
 
