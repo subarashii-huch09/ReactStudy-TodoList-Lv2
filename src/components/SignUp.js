@@ -1,22 +1,46 @@
-import React from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import Side from "./Side";
 import styles from "./LoginSignUp.module.css";
 
-
 const SignUp = () => {
+ 
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+
+  const fetchSignUp = async ({email,password,nickName}) => {
+    const user = {
+      email: email,
+      password,
+      nickName
+    }
+    const api = "https://todoo.5xcamp.us/users";
+    const postOption = {
+      method: "post",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ user }),
+    };
+    try {
+      console.log(user)
+      const response = await fetch(api,postOption);
+      console.log(response);
+      
+    } catch (error) {
+      console.log(error)
+    }
+  };
+
   return (
     <div className={styles.container}>
       <Side />
       <div>
-        <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+        <form className={styles.form} onSubmit={handleSubmit(fetchSignUp)}>
           <h2 className={styles.formTitle}>註冊帳號</h2>
           <div className={styles.formControl}>
             <label className={styles.formControlLabel} htmlFor="email">
@@ -27,7 +51,7 @@ const SignUp = () => {
               id="email"
               name="email"
               placeholder="請輸入Email"
-              {...register("Email", {
+              {...register("email", {
                 required: { value: true, message: "此欄位必填寫" },
                 pattern: { value: /^\S+@\S+$/i, message: "不符合 Email 規則" },
               })}
@@ -35,13 +59,13 @@ const SignUp = () => {
             <span className={styles.formErrorMsg}>{errors.Email?.message}</span>
           </div>
           <div className={styles.formControl}>
-            <label className={styles.formControlLabel} htmlFor="userName">
+            <label className={styles.formControlLabel} htmlFor="nickName">
               您的暱稱
             </label>
             <input
               className={styles.formControlInput}
-              id="userName"
-              name="userName"
+              id="nickName"
+              name="nickName"
               type="text"
               placeholder="請輸入您的暱稱"
               {...register("nickname", {
@@ -71,14 +95,15 @@ const SignUp = () => {
             </span>
           </div>
           <div className={styles.formControl}>
-            <label className={styles.formControlLabel} htmlFor="password2">
+            <label className={styles.formControlLabel}>
+              {/* htmlFor="password2" */}
               再次輸入密碼
             </label>
             <input
               className={styles.formControlInput}
-              name="password2"
-              id="password2"
-              type="password"
+              // name="password2"
+              // id="password2"
+              // type="password"
               placeholder="請再次輸入密碼"
               {...register("password2", {
                 required: { value: true, message: "此欄位必填寫" },
