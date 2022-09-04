@@ -101,15 +101,14 @@ const SignUp = () => {
             </span>
           </div>
           <div className={styles.formControl}>
-            <label className={styles.formControlLabel}>
-              {/* htmlFor="password2" */}
+            <label htmlFor="password2" className={styles.formControlLabel}>
               再次輸入密碼
             </label>
             <input
               className={styles.formControlInput}
-              // name="password2"
-              // id="password2"
-              // type="password"
+              name="password2"
+              id="password2"
+              type="password"
               placeholder="請再次輸入密碼"
               {...register("password2", {
                 required: { value: true, message: "此欄位必填寫" },
