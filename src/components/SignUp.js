@@ -14,9 +14,9 @@ const SignUp = () => {
   const fetchSignUp = async ({email,password,nickName}) => {
     const user = {
       email: email,
-      password,
-      nickName
-    }
+      nickName,
+      password
+    };
     const api = "https://todoo.5xcamp.us/users";
     const postOption = {
       method: "post",
@@ -68,7 +68,7 @@ const SignUp = () => {
               name="nickName"
               type="text"
               placeholder="請輸入您的暱稱"
-              {...register("nickname", {
+              {...register("nickName", {
                 required: { value: true, message: "此欄位必填寫" },
                 maxLength: { value: 12, message: "至多為 12 字元" },
               })}
