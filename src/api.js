@@ -1,15 +1,17 @@
+import authUser from "./authUser"
 const api_url = "https://todoo.5xcamp.us";
 
 const api = {
-  // getAllTodos: async () =>{
-  //   await fetch(api_url + `/todos`, {
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //       Authorization: localStorage.getItem("token"),
-  //     },
-  //     method: "GET"
-  //   });
-  // },
+  getAllTodos: async () =>{
+    await fetch(`${api_url}/todos`, {
+      method: "GET",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        Authorization: authUser.getAuthToken(),
+      },
+    });
+  },
 
   // addTodos: async(data) =>{
   //   await fetch(api_url + `/todos`, {
