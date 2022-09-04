@@ -1,9 +1,8 @@
-import Header from "./Header";
 import TodoInput from "./TodoInput";
-import MainList from "./MainList";
 import Content from "./Content";
 import { useState } from "react";
 import styles from "./TodoList.module.css"
+import logo from "../img/logo_lg.png";
 let data = [
   {
     id: Date.now() + Math.floor(Math.random() * 1000),
@@ -43,16 +42,26 @@ const TodoList = () =>{
 
   return (
     <div className={styles.container}>
-      <Header />
+      <div className={styles.headerContainer}>
+        <h1 className={styles.headerTitle}>
+          <img src={logo} alt="logo" />
+        </h1>
+        <ul className={styles.navList}>
+          <li className={styles.listItem}>
+            <button className={styles.user}>王小明的代辦</button>
+          </li>
+          <li className={styles.listItem}>
+            <button className={styles.logOutButton}>登出</button>
+          </li>
+        </ul>
+      </div>
       <TodoInput
         input={input}
         setInput={setInput}
         todoData={todoData}
         setTodoData={setTodoData}
       />
-      <MainList>
-        <Content todoData={todoData} setTodoData={setTodoData} />
-      </MainList>
+      <Content todoData={todoData} setTodoData={setTodoData} />
     </div>
   );
 }

@@ -1,24 +1,66 @@
 import React from "react";
+import {useEffect } from "react";
 import { useForm } from "react-hook-form";
-import {Link} from "react-router-dom"
+import {Link, useNavigate} from "react-router-dom"
 import Side from "./Side";
 import styles from "./LoginSignUp.module.css";
+import authUser from "../authUser";
+import api from "../api"
+import Swal from "sweetalert2";
 
 const Login = () => {
+  let navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
-  console.log(errors);
+
+  const fetchLogIn = async(user) => {
+    try{
+      const res = await api.userSignIn(user);
+      const response = await res.json()
+
+
+      const { headers, status } = res;
+      const { nickname } = response
+      const authorization = headers.get("authorization");
+
+      if (status === 200) {
+        authUser.setUserData({
+          nickname,
+          authorization,
+        });
+
+        navigate("/Todo");
+      } else if (status === 401) {
+        Swal.fire({
+          icon: "error",
+          title: response.message,
+          text: response.error,
+        });
+      }
+      
+
+    } catch(error){
+      console.log(error.response)
+    }
+    
+  };
+
+  useEffect(() => {
+    if (authUser.getUserData() !== null) {
+      navigate("/todos");
+    }
+  }, [navigate]);
   return (
     <div className={styles.container}>
       <Side />
       <div>
         <form
           className={`${styles.form} ${styles.loginForm}`}
-          onSubmit={handleSubmit(onSubmit)}
+          onSubmit={handleSubmit(fetchLogIn)}
         >
           <h2 className={styles.formTitle}>最實用的線上代辦事項服務</h2>
           <div className={styles.formControl}>
