@@ -1,38 +1,43 @@
-import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { useForm} from "react-hook-form";
+import { Link, useNavigate } from "react-router-dom";
 import Side from "./Side";
 import styles from "./LoginSignUp.module.css";
+import api from "../api"
+import Swal from 'sweetalert2'
+
 
 const SignUp = () => {
  
+  let navigate = useNavigate()
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
 
-  const fetchSignUp = async ({email,password,nickName}) => {
-    const user = {
-      email: email,
-      nickName,
-      password
-    };
-    const api = "https://todoo.5xcamp.us/users";
-    const postOption = {
-      method: "post",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ user }),
-    };
+  const fetchSignUp = async (user) => {
+    
     try {
-      console.log(user)
-      const response = await fetch(api,postOption);
-      console.log(response);
-      
+      const res = await api.userSignUp(user);
+      // console.log(res);
+      const response = await res.json()
+      console.log(res.status)
+      if(res.status === 201){
+        Swal.fire({
+        icon: "success",
+        title: response.message,
+      });
+      navigate("/", { replace: true });
+    } else {
+      Swal.fire({
+        icon: "error",
+        title: response.message,
+        text: response.error,
+      });
+    }
     } catch (error) {
-      console.log(error)
+      console.log(error.response)
     }
   };
 
