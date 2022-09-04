@@ -20,10 +20,8 @@ const SignUp = () => {
     
     try {
       const res = await api.userSignUp(user);
-      // console.log(res);
       const response = await res.json()
-      // console.log(response)
-      // console.log(res.status)
+
       if(res.status === 201){
         Swal.fire({
         icon: "success",
